@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Portfolio
 
-Currently, two official plugins are available:
+This is a personal portfolio site built using Vite + React + TypeScript. It contains components for a homepage, projects list, contact form, and a responsive navigation and footer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Quick Overview:**
+- **Tech:** Vite, React, TypeScript, CSS
+- **Purpose:** Personal portfolio to showcase projects and contact information
 
-## React Compiler
+**Features:**
+- Lightweight Vite dev server and fast builds
+- Component-driven structure for reusable UI pieces (Navbar, Footer, Project cards)
+- Simple, style-focused layout with modular CSS in `src/styles`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Getting Started**
 
-## Expanding the ESLint configuration
+Prerequisites:
+- Node.js (16+ recommended)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install dependencies:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Run development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm run dev
 ```
+
+Build for production:
+
+```powershell
+npm run build
+```
+
+Preview production build locally:
+
+```powershell
+npm run preview
+```
+
+Note: The exact script names above follow typical Vite defaults. If your `package.json` uses different scripts, run those instead.
+
+**Project Structure**
+
+- `index.html` — HTML entry
+- `vite.config.ts` — Vite configuration
+- `src/main.tsx` — React entrypoint
+- `src/App.tsx` — Top-level app component
+- `src/index.css` — Global styles
+- `src/components/` — Reusable UI components
+	- `home/` — `Home.tsx`, `Hero.tsx`
+	- `navbar/` — `Navbar.tsx`
+	- `footer/` — `Footer.tsx`
+	- `about/` — `About.tsx`
+	- `contact/` — `Contact.tsx`
+	- `project/` — `Project.tsx`, `ProjectCard.tsx`
+- `src/styles/spacing.ts` — spacing tokens/helpers
+- `src/utiles/data.ts` — data (projects, links, etc.) used by components
+
+**How the app is organized**
+
+- Components are focused and small: `ProjectCard` renders a single project, `Project` lists projects.
+- Styles are simple and colocated via global `index.css` and style helpers in `src/styles`.
+- Data is centralized in `src/utiles/data.ts` so content can be updated without changing components.
+
+**Development Tips**
+- Keep components presentational and push data to them via props.
+- Add new project entries to `src/utiles/data.ts` — `ProjectCard` will render them automatically.
+- Use Vite's fast refresh for rapid UI iteration.
+
+**Contributing**
+- Open an issue or submit a PR with a clear description of changes.
+
+**Contact**
+- Update the `Contact` component with your email/social links under `src/components/contact/Contact.tsx`.
+
+**License**
+- Add a license file or update this section with your chosen license.
+

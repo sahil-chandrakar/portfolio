@@ -27,7 +27,7 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: '0 !important'
+          padding: "0 !important",
         }}
       >
         <Box>
@@ -54,7 +54,6 @@ const Navbar = () => {
 
         <List
           sx={{
-            display: "flex",
             gap: 3,
             listStyle: "none",
             "& .MuiListItem-root": {
