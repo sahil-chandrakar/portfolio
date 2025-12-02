@@ -18,7 +18,7 @@ const Navbar = () => {
           "linear-gradient(to right, white 0%, white 15%, #F6F6F6 20%, #F6F6F6 100%)",
         color: "black",
         boxShadow: "none",
-        padding: "25px 0",
+        padding: "15px 0",
         px: containerPadding,
       }}
     >

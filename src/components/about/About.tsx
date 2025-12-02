@@ -16,11 +16,12 @@ const About = () => {
     >
       <Box
         component="img"
-        src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+        src="assets/3.png"
         alt="about-img"
         sx={{
           width: { xs: "220px", md: "320px" },
           borderRadius: "12px",
+          background: "linear-gradient(to bottom, transparent 30%, #f0f0f0 50%)",
         }}
       />
 

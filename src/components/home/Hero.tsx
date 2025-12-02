@@ -12,7 +12,7 @@ export default function Hero() {
         px: containerPadding,
         flexDirection: { xs: "column", md: "row" },
         pt: { xs: 5, md: 0 },
-        pr: { lg: 35, md: 0 },
+        pr: { lg: 25, md: 0 },
       }}
     >
       <Box sx={{ maxWidth: "550px" }}>
@@ -39,9 +39,7 @@ export default function Hero() {
         </Typography>
 
         <Typography sx={{ color: "#555", fontSize: "18px", mb: 3 }}>
-          I build fast, modern and clean web applications using TypeScript,
-          React and Node.js. I enjoy turning ideas into smooth, user-friendly
-          digital experiences.
+          I build fast, modern and scalable applications using React, Next.js, TypeScript, Python/Django and Java/Spring Boot. I turn ideas into elegant, user-focused digital solutions powered by strong frontend, backend and AI/ML skills.
         </Typography>
 
         <Stack direction="row" spacing={2}>
@@ -70,16 +68,25 @@ export default function Hero() {
       </Box>
 
       {/* right side  */}
-      <Box sx={{ mt: { xs: 4, md: 0 } }}>
+      <Box
+        sx={{
+          width: { xs: '100%', md: 400, lg: 500 },
+          borderBottomLeftRadius: "50px",
+          borderBottomRightRadius: "50px",
+          overflow: "hidden",
+          background: "linear-gradient(to bottom, transparent 30%, #f0f0f0 50%)",
+          p: 2,
+        }}
+      >
         <Box
           component="img"
-          src="https://img.icons8.com/fluency/512/programming.png"
+          src="/assets/2.png"
           alt="developer-img"
-          sx={{
-            width: { xs: "250px", md: "400px", lg:'500px', },
-          }}
-        ></Box>
+          sx={{ width: "100%", display: "block" }}
+        />
       </Box>
+
+
     </Box>
   );
 }
